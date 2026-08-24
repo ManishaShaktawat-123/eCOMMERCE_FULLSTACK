@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b0c1a;
+  color: #e6e8f0;
+  font-family: 'Segoe UI', 'Trebuchet MS', system-ui, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  text-align: center;
+  padding: 48px 20px 36px;
+  background: radial-gradient(circle at 50% -20%, rgba(238, 9, 121, 0.25), transparent 60%),
+    radial-gradient(circle at 20% 120%, rgba(0, 201, 255, 0.2), transparent 60%);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 34px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #9aa0b4;
+  margin: 6px 0 28px;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}
+
+.main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 20px 60px;
+}
+
+.section-title {
+  margin: 40px 0 16px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.dashboard-section {
+  margin-top: 10px;
+}
+
+.error-banner {
+  background: #3a0000;
+  border: 1px solid #ff4b2b;
+  color: #ffb3a3;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px 0;
+  color: #9aa0b4;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #565b74;
+  font-size: 13px;
+  border-top: 1px solid #1c1f38;
+}
