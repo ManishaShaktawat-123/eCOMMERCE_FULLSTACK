@@ -9,6 +9,7 @@ Run locally:
 Docs available at: http://localhost:8000/docs
 """
 
+
 import difflib
 from typing import Optional
 
@@ -30,6 +31,25 @@ app = FastAPI(
 # Allow the React frontend (any origin during development; restrict in production)
 app.add_middleware(
     CORSMiddleware,
+    from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+# 1. FastAPI App initialize karein
+app = FastAPI()
+
+# 2. CORS Middleware Add Karein (Sare routes se pehle)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# --------------------------------------------------
+# Iske neeche aapke baki saare routes/endpoints honge:
+# (Jaise @app.get("/"), @app.post("/predict"), etc.)
+# --------------------------------------------------
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
