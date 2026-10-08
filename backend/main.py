@@ -19,42 +19,23 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from sklearn.ensemble import RandomForestClassifier
 
-# --------------------------------------------------------------------------
+# --------------------------------------------------
 # App setup
-# --------------------------------------------------------------------------
+# --------------------------------------------------
 app = FastAPI(
     title="E-Commerce Return Rate Minimizer API",
-    description="Product-wise return rate, profit/loss analytics and ML return-risk prediction.",
+    description="Product-wise return rate, profit/loss analytics and ML return-risk prediction",
     version="1.0.0",
 )
 
-# Allow the React frontend (any origin during development; restrict in production)
-app.add_middleware(
-    CORSMiddleware,
-    from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-
-# 1. FastAPI App initialize karein
-app = FastAPI()
-
-# 2. CORS Middleware Add Karein (Sare routes se pehle)
+# CORS Middleware (React/Vercel Frontend ke liye)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)
-
-# --------------------------------------------------
-# Iske neeche aapke baki saare routes/endpoints honge:
-# (Jaise @app.get("/"), @app.post("/predict"), etc.)
-# --------------------------------------------------
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+) 
 
 # --------------------------------------------------------------------------
 # Data generation (same logic as the Jupyter Notebook version)
